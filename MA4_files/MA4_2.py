@@ -15,13 +15,12 @@ def main():
 	xs = list(range(30,46))
 	ys_py = []
 	ys_c = []
-#	for n in xs:
-#		start = pc()
-#		k = fib_py(n)
-#		end = pc()
-#		ys_py.append(end-start)
-#		print(f'Calculated {n}th fib in {round(end-start,2)} seconds, {k}')
-	ys_py = [0.46,0.74,1.2,1.94,3.14,5.08,8.19,13.26,21.5,34.71,56.2,91.06,147.47,238.52,385.95,624.08]
+	for n in xs:
+		start = pc()
+		k = fib_py(n)
+		end = pc()
+		ys_py.append(end-start)
+		print(f'Calculated {n}th fib in {round(end-start,2)} seconds, {k}')
 
 	print('Running on C++ code:')
 	for n in xs:
