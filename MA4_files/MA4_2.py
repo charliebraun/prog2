@@ -24,12 +24,22 @@ def main():
 
 	print('Running on C++ code:')
 	for n in xs:
-		start = pc()
-		f = Integer(n)
+                start = pc()
+                f = Integer(n)
 		fb = f.fib()
 		end = pc()
 		ys_c.append(end-start)
 		print(f'Calculated {n}th fib in {round(end-start,2)} seconds, {fb}')
+        with open('data.txt', 'w') as f:
+                for x in xs[:-1]:
+                        f.write(str(x) + ',')
+                f.write('\n')
+                for x in ys_py[:-1]:
+                        f.write(str(x) + ',')
+                f.write('\n')
+                for x in ys_c[:-1]:
+                        f.write(str(x) + ',')
+        
 	plt.plot(xs, ys_py)
 	plt.plot(xs, ys_c)
 	plt.savefig('fib.png')
